@@ -4,6 +4,10 @@ body{
     background-color:  black;
 }
 
+input{
+    margin-bottom: 10px;
+}
+
 #interface{
     background-color: rgb(228, 242, 247);
     min-width: 300px;
