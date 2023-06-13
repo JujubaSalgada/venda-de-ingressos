@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body{
+    background-color:  black;
+}
+
+#interface{
+    background-color: rgb(228, 242, 247);
+    min-width: 300px;
+    max-width: 900px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+header{
+    text-align: center;
+}
+
+#ingressoFoto{
+    float: right;
+}

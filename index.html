@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compre seu ingresso</title>
-    <link rel="stylesheet" hreft="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div id="interface">
+        <header>
+            <h1>Venda de ingresso</h1>
+            <picture>
+                <source media="(max-width: 350px)" srcset="imagens/ticketSmall.png" type="image/png">
+                <source media="(max-width: 400px)" srcset="imagens/ticketMed.png" type="image/png">
+                <img src="imagens/ticketBig.png" alt="Foto de ingressos" id="ingressoFoto">
+            </picture>
+            <hr>
+        </header>
+        <p>Digite seu nome: <input type="text" id="name"></p>
+        <p>Digite seu email: <input type="email" id="email"></p>
+        <p>insira sua idade: <input type="number" id="years old"></p>
+
+        <button onclick="confirmar()">Confirmar</button>
+    </div>
 </body>
+
+<script>
+    function confirmar(){
+        var idade = document.getElementById("years old");
+        if (idade.value >= 18){
+            window.alert("Ingresso comprado");
+        }
+        else{
+            window.alert("Idade inadequada, venda não autorizada");
+        }
+
+    }
+</script>
+
 </html>
