@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
+
     <div id="interface">
         <header>
             <h1>Venda de ingresso</h1>
@@ -22,21 +22,21 @@
         <form>
         <span>Digite seu nome:</span> <input type="text" id="name"> <br>
         <span>Digite seu email:</span> <input type="text" id="email"> <br>
-        <span>Insira sua idade:</span> <input type="number" id="years old"> <br>
+        <span>Sua idade:</span> <input type="number" id="years old"> <br>
 
         <select id="opcoesshow" required>
             <option value="">Selecione o show</option>
-            <option value="teste 2">teste 2</option>
-            <option value="teste 3">teste 3</option>
+            <option value="claudia Leitte">Claudia Leitte</option>
+            <option value="roberto carlos">Roberto Carlos</option>
         </select>
         </form>
 
         <button onclick="verificação_de_preenchimento()">Confirmar</button>
 
-        <button id="btnteste" onclick="valores()">Testar</button>
+        <button id="btnteste" onclick="valores()">Ver mais detalhes de show</button>
     </div>
 
-    <div id="ListaShows">
+    <div id="detalhes">
 
     </div>
 
@@ -57,6 +57,8 @@
         var nome = document.getElementById("name");
         var email = document.getElementById("email");
         var idade = document.getElementById("years old");
+        var listaShow = document.getElementById("opcoesshow");
+
         if(nome.value == ''){
             nome.style.backgroundColor = 'rgb(237, 135, 135)';
         }
@@ -68,11 +70,15 @@
         if(idade.value == ''){
             idade.style.backgroundColor ='rgb(237, 135, 135)';
         }
+
+        if(listaShow.value == ''){
+            listaShow.style.backgroundColor ='rgb(237, 135, 135)';
+        }
     }
 
     function valores(){
         var valor = document.getElementById("opcoesshow");
-        window.alert(valor.value);
+        mostrarMensagem()
     }
 </script>
 

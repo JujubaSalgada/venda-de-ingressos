@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 body{
+    background-image: url(imagens/palco.jpg);
     background-color:  black;
 }
 
@@ -9,7 +10,8 @@ input{
 }
 
 #interface{
-    background-color: rgb(243, 213, 168);
+    background-color: rgb(37, 37, 37);
+    color: white;
     min-width: 400px;
     max-width: 900px;
     margin: auto;
@@ -24,4 +26,12 @@ header{
 
 #ingressoFoto{
     float: right;
+}
+
+#Detalhes{
+    background-color: blueviolet;
+}
+
+#opcoesshow{
+    margin: 4px;
 }
