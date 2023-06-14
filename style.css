@@ -28,8 +28,18 @@ header{
     float: right;
 }
 
-#Detalhes{
-    background-color: blueviolet;
+#detalhes{
+    background-color: rgb(37, 37, 37);
+    color: white;
+    min-width: 400px;
+    max-width: 900px;
+    margin: auto;
+    padding: 5px;
+}
+
+#divErro{
+    color: red;
+    margin-bottom: 5px;
 }
 
 #opcoesshow{

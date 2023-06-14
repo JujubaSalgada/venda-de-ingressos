@@ -24,20 +24,25 @@
         <span>Digite seu email:</span> <input type="text" id="email"> <br>
         <span>Sua idade:</span> <input type="number" id="years old"> <br>
 
+        <div id="divErro">
+            
+        </div>
+
         <select id="opcoesshow" required>
             <option value="">Selecione o show</option>
             <option value="claudia Leitte">Claudia Leitte</option>
             <option value="roberto carlos">Roberto Carlos</option>
         </select>
+
         </form>
 
-        <button onclick="verificação_de_preenchimento()">Confirmar</button>
+        <button onclick="confirmar()">Confirmar</button>
 
         <button id="btnteste" onclick="valores()">Ver mais detalhes de show</button>
-    </div>
 
-    <div id="detalhes">
+        <div id="detalhes">
 
+        </div>
     </div>
 
 </body>
@@ -45,12 +50,17 @@
 <script>
     function confirmar(){
         var idade = document.getElementById("years old");
-        if (idade.value >= 18){
-            window.alert("Ingresso comprado");
+        var divErro = document.getElementById("divErro");
+        verificação_de_preenchimento()
+        if (divErro.innerText == ''){
+            if (idade.value >= 18){
+                window.alert("Ingresso comprado");
+            }
+            else{
+                window.alert("Idade inadequada, venda não autorizada");
+            }
         }
-        else{
-            window.alert("Idade inadequada, venda não autorizada");
-        }
+        
     }
 
     function verificação_de_preenchimento(){
@@ -58,28 +68,38 @@
         var email = document.getElementById("email");
         var idade = document.getElementById("years old");
         var listaShow = document.getElementById("opcoesshow");
+        var campoErro = document.getElementById("divErro");
 
         if(nome.value == ''){
             nome.style.backgroundColor = 'rgb(237, 135, 135)';
+            campoErro.innerHTML = 'Por favor, digite seu nome';
         }
-
-        if(email.value == ''){
-            email.style.backgroundColor = 'rgb(237, 135, 135)';
-        }
-        
-        if(idade.value == ''){
-            idade.style.backgroundColor ='rgb(237, 135, 135)';
-        }
-
-        if(listaShow.value == ''){
-            listaShow.style.backgroundColor ='rgb(237, 135, 135)';
+        else{
+            nome.style.backgroundColor = 'rgb(255, 255, 255)'
+            if(email.value == ''){
+                email.style.backgroundColor = 'rgb(237, 135, 135)';
+                campoErro.innerHTML = 'Por favor, insira seu email';
+            }
+            else{
+                email.style.backgroundColor = 'rgb(255, 255, 255)'
+                if(idade.value == ''){
+                    idade.style.backgroundColor = 'rgb(237, 135, 135)';
+                }
+                else{
+                    idade.style.backgroundColor = 'rgb(255, 255, 255)'
+                    if(listaShow.value == ''){
+                        listaShow.style.backgroundColor = 'rgb(237, 135, 135)';
+                        campoErro.innerHTML = 'Por favor, Selecione um show';
+                    }
+                    else{
+                        listaShow.style.backgroundColor = 'rgb(255, 255, 255)'
+                        campoErro.innerHTML = '';
+                    }
+                }
+            }
         }
     }
 
-    function valores(){
-        var valor = document.getElementById("opcoesshow");
-        mostrarMensagem()
-    }
 </script>
 
 </html>
