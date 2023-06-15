@@ -30,7 +30,7 @@
 
         <select id="opcoesshow" required>
             <option value="">Selecione o show</option>
-            <option value="claudia Leitte">Claudia Leitte</option>
+            <option value="sorriso maroto">Sorriso Maroto</option>
             <option value="roberto carlos">Roberto Carlos</option>
         </select>
 
@@ -38,7 +38,7 @@
 
         <button onclick="confirmar()">Confirmar</button>
 
-        <button id="btnteste" onclick="valores()">Ver mais detalhes de show</button>
+        <button id="btndetalhe" onclick="detalhes()">Ver mais detalhes de show</button>
 
         <div id="detalhes">
 
@@ -98,6 +98,56 @@
                 }
             }
         }
+    }
+
+    function detalhes(){
+        botao = document.getElementById("btndetalhe");
+        divDetalhes = document.getElementById("detalhes");
+        listaShow = document.getElementById("opcoesshow");
+        campoErro = document.getElementById("divErro");
+
+        if(listaShow.value == ''){
+            listaShow.style.backgroundColor = 'rgb(237, 135, 135)';
+            campoErro.innerHTML = 'Por favor, Selecione um show';
+            divDetalhes.innerText = '';
+        }
+
+        else{
+            listaShow.style.backgroundColor = 'rgb(255, 255, 255)'
+            campoErro.innerHTML = '';
+            if(listaShow.value == 'roberto carlos'){
+
+                if(botao.innerText == 'Ver mais detalhes de show'){
+                    botao.innerText = 'Ocultar detalhes do show';
+                    robertoCarlos();
+                }
+                else{
+                    botao.innerText = 'Ver mais detalhes de show';
+                    divDetalhes.innerText = '';
+                }
+            }
+
+            if(listaShow.value == 'sorriso maroto'){
+                if(botao.innerText == 'Ver mais detalhes de show'){
+                    botao.innerText = 'Ocultar detalhes do show';
+                    sorrisoMaroto();
+                }
+                else{
+                    botao.innerText = 'Ver mais detalhes de show';
+                    divDetalhes.innerText = '';
+                }
+            }
+        }
+    }
+
+    function robertoCarlos(){
+        divdetalhes = document.getElementById("detalhes");
+        divdetalhes.innerHTML = "<h2>Roberto carlos em recife</h2><p>Sáb., 13:00 <br> Camarote Parador - Av. Alfredo Lisboa, 05 - Recife <br> Recife - PE</p>";
+    }
+
+    function sorrisoMaroto(){
+        btndetalhes = document.getElementById("detalhes");
+        btndetalhes.innerHTML = "<h2>Sorriso Maroto em recife</h2><p>Dom., 13:00 <br> Região metropolitada do Recife <br> Pernambuco</p>";
     }
 
 </script>
