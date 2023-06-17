@@ -20,31 +20,30 @@
         </header>
         
         <form>
-        <input type="text" id="name" placeholder="Digite seu nome"> <br>
-        <input type="text" id="email" placeholder="Insira seu email"> <br>
+        <input type="text" id="name" placeholder="Digite seu nome"> 
         <input type="number" id="years old" placeholder="Insira sua idade"> <br>
+        <input type="text" id="email" placeholder="Insira seu email"> 
 
         <div id="divErro">
             
         </div>
 
-        <select id="opcoesshow" required>
-            <option value="">Selecione o show</option>
+        <select id="opcoesshow" required class="botoes">
+            <option value="" disables selected hidden>Selecione o show</option>
             <option value="sorriso maroto">Sorriso Maroto</option>
             <option value="roberto carlos">Roberto Carlos</option>
+            <option value="nxZero">NX Zero</option>
         </select>
 
         </form>
 
-        <button onclick="confirmar()">Confirmar</button>
+        <button id="btndetalhe" onclick="detalhes()" class="botoes">Ver mais detalhes de show</button>
+        <button onclick="confirmar()" class="botoes">Confirmar</button>
 
-        <button id="btndetalhe" onclick="detalhes()">Ver mais detalhes de show</button>
+        <div id="detalhes" class="DivsInformacao"> </div>
+        <div id="divConfirmacao" class="DivsInformacao"></div>
 
-        <div id="detalhes">
-
-        </div>
     </div>
-
 </body>
 
 <script>
@@ -115,28 +114,24 @@
         else{
             listaShow.style.backgroundColor = 'rgb(255, 255, 255)'
             campoErro.innerHTML = '';
-            if(listaShow.value == 'roberto carlos'){
 
-                if(botao.innerText == 'Ver mais detalhes de show'){
+            if(botao.innerText == 'Ver mais detalhes de show'){
                     botao.innerText = 'Ocultar detalhes do show';
+                    if(listaShow.value == 'roberto carlos'){
                     robertoCarlos();
+                    }
+                    if(listaShow.value == 'sorriso maroto'){
+                        sorrisoMaroto();
+                    }
+                    if(listaShow.value == 'nxZero'){
+                        nxZero();
+                    }
+                    
                 }
                 else{
                     botao.innerText = 'Ver mais detalhes de show';
                     divDetalhes.innerText = '';
                 }
-            }
-
-            if(listaShow.value == 'sorriso maroto'){
-                if(botao.innerText == 'Ver mais detalhes de show'){
-                    botao.innerText = 'Ocultar detalhes do show';
-                    sorrisoMaroto();
-                }
-                else{
-                    botao.innerText = 'Ver mais detalhes de show';
-                    divDetalhes.innerText = '';
-                }
-            }
         }
     }
 
@@ -150,6 +145,10 @@
         btndetalhes.innerHTML = "<h2>Sorriso Maroto em recife</h2><p>Dom., 13:00 <br> Região metropolitada do Recife <br> Pernambuco</p>";
     }
 
+    function nxZero(){
+        btndetalhes = document.getElementById("detalhes");
+        btndetalhes.innerHTML =" <h2>NX Zero</h2> <p>- Recife sex., 20:00 – 20:30 <br> - Classic Hall - Av. Gov. Agamenon Magalhães, S/N - Salgadinho <br> - Olinda - PE</p>"
+    }
 </script>
 
 </html>
